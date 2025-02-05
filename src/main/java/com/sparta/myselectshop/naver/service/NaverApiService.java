@@ -27,13 +27,6 @@ public class NaverApiService {
         this.restTemplate = builder.build();
     }
 
-    @Value("naver.api.client.id")
-    private final String naverClientId="";
-
-
-    @Value("naver.api.client.secret")
-    private final String naverClientSecret="";
-
     public List<ItemDto> searchItems(String query) {
         // 요청 URL 만들기
         URI uri = UriComponentsBuilder
@@ -48,8 +41,8 @@ public class NaverApiService {
 
         RequestEntity<Void> requestEntity = RequestEntity
                 .get(uri)
-                .header("X-Naver-Client-Id", naverClientId)
-                .header("X-Naver-Client-Secret", naverClientSecret)
+                .header("X-Naver-Client-Id", "TK17MVxlAEoOX6wnD6mS")
+                .header("X-Naver-Client-Secret", "500XdTrAwo")
                 .build();
 
         ResponseEntity<String> responseEntity = restTemplate.exchange(requestEntity, String.class);
